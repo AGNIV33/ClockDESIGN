@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+img {
+    position: absolute;
+    pointer-events: none;
+}
+
+.clock {
+    padding: 30px;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    background-color: rgba(221, 225, 231, 0.7); /* Added transparency */
+    background-size: cover;
+    border: 50px solid rgba(221, 225, 231, 0.7); /* Added transparency */
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    box-shadow: -20px -20px 50px #ffffff73, 20px 20px 30px rgba(94, 104, 121, 0.288), inset -20px -20px 50px #ffffff73, inset 20px 20px 30px rgba(94, 104, 121, 0.288);
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: black;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+    position: absolute;
+}
+
+.clock .hour, .hr {
+    width: 200px;
+    height: 200px;
+}
+
+.clock .min, .mn {
+    width: 230px;
+    height: 230px;
+}
+
+.clock .sec, .sc {
+    width: 270px;
+    height: 270px;
+}
+
+.hr, .mn, .sc {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.hr::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+
+.mn::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 145px;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+
+.sc::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 180px;
+    background: #000;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
